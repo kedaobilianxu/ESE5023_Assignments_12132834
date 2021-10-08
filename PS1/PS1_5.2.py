@@ -1,5 +1,6 @@
 #5.2
 import numpy as np
+import matplotlib.pyplot as plt
 def Find_expression(sum_num):
     plist = all_strings(9)
     result = []
@@ -23,9 +24,24 @@ for j in range(1,101):
     solution = 0
     res = Find_expression(j)
     Total_solutions.append(len(res))
-max_solution = max(Total_solutions)
-max_solution_location = Total_solutions.index(max(Total_solutions))
-print('拥有最多solution的数为：'+str(max_solution_location + 1)+', '+'solution数量为： '+str(max_solution))
-min_solution = min(Total_solutions)
-min_solution_location = Total_solutions.index(min(Total_solutions))
-print('拥有最少solution的数为：'+str(min_solution_location + 1)+', '+'solution数量为： '+str(min_solution))
+X = []
+for i in range(1,101):
+    X.append(i)
+Y = Total_solutions
+plt.plot(X,Y)
+max_solution = []
+max_solution_ = max(Total_solutions)
+for i in range(100):
+    if Total_solutions[i] == max_solution_:
+        max_solution.append(i)
+min_solution = []
+min_solution_ = min(Total_solutions)
+for i in range(100):
+    if Total_solutions[i] == min_solution_:
+        min_solution.append(i)
+print(max_solution)
+print(min_solution)
+plt.text(0 + 1, 26, 'Max_value[1,26]', color = 'g')
+plt.text(44 + 1, 26, 'Max_value[45,26]', color = 'g' )
+plt.text(87 + 1, 6, 'Min_value[88,6]', color = 'g')
+plt.show()

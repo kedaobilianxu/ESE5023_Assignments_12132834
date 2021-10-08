@@ -20,7 +20,7 @@ def all_strings(n):
  
 
 num = np.random.randint(1,101,1)
-res = Find_expression(num[0])
+res = Find_expression(45)
 for i in res:
     print(i)
 print('Total counts: ', len(res))

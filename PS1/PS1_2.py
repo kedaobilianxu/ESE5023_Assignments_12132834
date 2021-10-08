@@ -25,5 +25,5 @@ def Matrix_multip(a,b):
                 mul_sum+=a[i][t]*b[t][j]
             result[i][j]=mul_sum
     print(result)
-    
+
 Matrix_multip(M1,M2)
